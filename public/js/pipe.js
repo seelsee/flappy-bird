@@ -1,6 +1,7 @@
 (function() {
     //画两根管子
     var Pipe = window.Pipe = function(obj) {
+        this.point = 0;
         function randomNum(m, n) {  
             return Math.floor(Math.random() * (n - m + 1) + m);  
         }
@@ -22,7 +23,6 @@
         this.image2 = obj.img.pipe_up;
         //加判断条件 ,up pipe 太长
         if(x == 200 || x == 220 || x == 180 || x == 160) {
-            console.log(1)
             var y2 = parseInt(Math.random() * (len - 5)),
             x2 = arr[y2];
         } else if(x == 100 || x == 120) {
@@ -46,13 +46,14 @@
             this.x--;
             // console.log(this.x);
             if(this.x < -this.w){
+                this.point++;
+                // console.log(point)
                 this.x = obj.canvas.width;
                 //第一根pipe
                 this.h = arr[parseInt(Math.random() * len)];
                 this.y = 0;
                 //第二根pipe
                 if(this.h == 200 || this.h == 220 || this.h == 180 || this.h == 160) {
-                    console.log(2)
                     this.h2 = arr[parseInt(Math.random() * (len - 4))];
                 } else if(this.h == 100 || this.h == 120) {
                     

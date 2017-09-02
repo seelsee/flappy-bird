@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    position: absolute;
+    top: 0;
+    left: 37px;
+    /* display: none; */
+    width: 269px;
+    height: 480px;
+    /* background-color: #222; */
+}
+.flappy {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 236px;
+    height: 77px;
+    background: url('../images/head.jpg') 0 0 no-repeat;
+}
+.bird {
+    position: absolute;
+    top: 120px;
+    left: 206px;
+    width: 40px;
+    height: 26px;
+    background: url('../images/bird0.png') 0 0 no-repeat;
+}
+a {
+    display: block;
+    position: relative;
+    margin: 250px auto 0 auto;
+    width: 85px;
+    height: 29px;
+    background: url('../images/start.jpg') 0 0 no-repeat;
+
+}

@@ -5,42 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>flappy bird</title>
+    <link rel="stylesheet" href="./style/index.css">
     <style>
-        .start {
-            position: relative;
-            margin: 0 auto;
-            width: 343px;
-            height: 480px;
-            background: url(./imgs/bg.jpg);
 
-        }
-        a {
-            display: block;
-            position: absolute;
-            /* margin: 100px auto;
-             */
-             top: 50px;
-             left: 100px;
-            width: 50px;
-            height: 50px;
-            /*margin: 100% 0 0 30%;*/
-            /*width: 40%;*/
-            /*height: 5%;*/
-            /*border-radius: 5px;*/
-            /*padding-top: 3%;*/
-            background-color: #489f2d;
-            text-align: center;
-            text-decoration: none;
-        }
     </style>
 </head>
 <body>
-    <div class="start">
-        <a href="./game.html">开始游戏</a>
+    <div class="box">
+        <div class="flappy"></div>
+        <div class="bird"></div>
+        <a href="./game.html"></a>
+        <h1>说明：空格为弹跳</h1>
     </div>
-</body>
+    <canvas id='canvas'></canvas>
+<script src='./js/background.js'></script>
+<script src='./js/img.js'></script>
+<script src='./js/banner.js'></script>
+<script src='./js/index.js'></script>
 <script>
-    var start = document.querySelector('.start');
-    var a = document.querySelector('a');
+    var flappy = document.querySelector('.flappy');
+    var bird = document.querySelector('bird');
+    var game = new Game();
 </script>
+</body>
 </html>
