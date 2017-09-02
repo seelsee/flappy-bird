@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    position: absolute;
+    top: 0;
+    left: 37px;
+    display: none;
+    width: 269px;
+    height: 480px;
+    /* background-color: #222; */
+}
+.game-over {
+    position: relative;
+    margin: 125px auto 5px auto;
+    width: 221px;
+    height: 40px;
+    background: url('../images/game_over.jpg') 0 0 no-repeat;
+}
+.message {
+    position: relative;
+    margin: 0 auto;
+    width: 269px;
+    height: 135px;
+    background: url('../images/message.jpg') 0 0 no-repeat;
+}
+a {
+    display: block;
+    position: relative;
+    margin: 5px auto;
+    width: 96px;
+    height: 33px;
+    background: url('../images/ok.jpg') 0 0 no-repeat;
+}

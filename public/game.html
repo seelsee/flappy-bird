@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flappy bird</title>
+    <link rel="stylesheet" href="./style/game.css">
+</head>
+<body>
+    <div class="box">
+        <div class="game-over"></div>
+        <div class="message"></div>
+        <a href="./game.html"></a>
+    </div>
+    <canvas id='canvas'></canvas>
+    
+    <script src='js/img.js'></script>
+    <script src='js/background.js'></script> 
+    <script src="js/banner.js"></script>
+    <script src="js/bird.js"></script>
+    <script src='js/pipe.js'></script> 
+    <script src='js/index.js'></script>
+    <script>
+        var box = document.querySelector('.box');
+        var a = document.querySelector('a');
+        var game = new Game();
+    </script>
+</body>
+</html>
