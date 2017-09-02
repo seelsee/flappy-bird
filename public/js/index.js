@@ -2,7 +2,6 @@
    var Game = window.Game = function() {
        this.canvas = document.querySelector('#canvas');
        this.ctx = this.canvas.getContext('2d');
-       this.ctx.font="20px Georgia";
        this.init();
        var that = this;
        this.loadAllResource(function() {
@@ -29,36 +28,34 @@
         this.bird = new Bird(this);
         this.pipe = new Pipe(this);
         var isGameOver = false;
+        var speed = 3;
         var timer = setInterval(function() {
             that.background.render();
             that.banner.render();
             that.banner.update();
             that.bird.render();
+            if(isUp) {
+                that.bird.update();
+            } else {
+                that.bird.update_down();
+
+            }
             that.pipe.render();
             that.pipe.update();
-            isTouch(that.bird.x, that.bird.y, that.pipe.x, that.pipe.y, that.pipe.y2);
-            if(isGameOver === true) {
-                box.style.display = 'block';
-                clearInterval(timer);
-                clearInterval(timer2);
-            }
-        }, 20);
-        var speed = 1;
-        var timer2 = setInterval(function() {
-            speed++;
-            // console.log(speed)
-            if(speed > 7) {
-                speed = 7
-            }
+            
             that.bird.y += speed;
             if(that.bird.y > 400) {
                 that.bird.y = 400;
                 isGameOver = true;
             }
-            // console.log(that.bird.y)
-        },50)
+            isTouch(that.bird.x, that.bird.y, that.pipe.x, that.pipe.y, that.pipe.y2);
+            if(isGameOver === true) {
+                box.style.display = 'block';
+                clearInterval(timer);
+            }
+        }, 20);
         //键盘触发事件
-        var isUp = true;
+        var isUp = false;
         document.onkeydown = function(ev) {
             var ev = window.ev || ev;
             switch(ev.keyCode) {
@@ -71,12 +68,20 @@
                         that.bird.y -= i;
                         if(that.bird.y < 0) {
                             that.bird.y = 0;
-                        }
-                        
-
+                        }    
+                        // that.bird.update();
                     }
                 }
             break;
+            }
+        }
+        //放开键盘
+        document.onkeyup = function(ev) {
+            var ev = window.ev || ev;
+            switch(ev.keyCode) {
+                case 32: {
+                    isUp = false;
+                }
             }
         }
         //碰撞检测
