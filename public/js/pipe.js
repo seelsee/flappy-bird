@@ -6,7 +6,7 @@
         }
         var arr = [100, 120, 140, 160, 180, 200, 220],
             len = arr.length;
-        var arr3 = [160, 180, 200, 220];
+        var arr3 = [160, 180, 200];
         // var arr2 = [100, 120, 140, 160],
         //     len2 = arr2.length;
 
@@ -23,7 +23,7 @@
         //加判断条件 ,up pipe 太长
         if(x == 200 || x == 220 || x == 180 || x == 160) {
             console.log(1)
-            var y2 = parseInt(Math.random() * (len - 4)),
+            var y2 = parseInt(Math.random() * (len - 5)),
             x2 = arr[y2];
         } else if(x == 100 || x == 120) {
             var y2 = parseInt(Math.random() * arr3.length);

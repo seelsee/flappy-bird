@@ -36,7 +36,7 @@
             that.bird.render();
             that.pipe.render();
             that.pipe.update();
-            isTouch(that.bird.x, that.bird.y, that.pipe.x, that.pipe.y);
+            isTouch(that.bird.x, that.bird.y, that.pipe.x, that.pipe.y, that.pipe.y2);
             if(isGameOver === true) {
                 box.style.display = 'block';
                 clearInterval(timer);
@@ -80,11 +80,17 @@
             }
         }
         //碰撞检测
-        function isTouch(birdX, birdY, pipeX, pipeY) {
+        function isTouch(birdX, birdY, pipeX, pipeY, pipeY2) {
             if((birdX + that.bird.w) > pipeX && birdX < (pipeX + that.pipe.w)) {
-                if((birdY + that.pipe.h) > pipeY && birdY <(pipeY + that.pipe.h)) {
-                    isGameOver = true;
+                if((birdY + that.pipe.h) > pipeY && birdY < (pipeY + that.pipe.h)) {
+
+                        isGameOver = true;
                 }
+                if(birdY + that.bird.h > pipeY2) {
+
+                        isGameOver = true;
+                }
+                
             }
         }
    }
