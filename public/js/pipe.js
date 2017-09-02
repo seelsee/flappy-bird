@@ -6,8 +6,9 @@
         }
         var arr = [100, 120, 140, 160, 180, 200, 220],
             len = arr.length;
-        var arr2 = [100, 120, 140, 160],
-            len2 = arr2.length;
+        var arr3 = [160, 180, 200, 220];
+        // var arr2 = [100, 120, 140, 160],
+        //     len2 = arr2.length;
 
         //第一根down_pipe;
             y = parseInt(Math.random() * len),
@@ -20,10 +21,15 @@
         //第二根up_pipe
         this.image2 = obj.img.pipe_up;
         //加判断条件 ,up pipe 太长
-        if(x == 200 || x == 220 || x == 180) {
-            var y2 = parseInt(Math.random() * len2),
-            x2 = arr2[y2];
-        } else {
+        if(x == 200 || x == 220 || x == 180 || x == 160) {
+            console.log(1)
+            var y2 = parseInt(Math.random() * (len - 4)),
+            x2 = arr[y2];
+        } else if(x == 100 || x == 120) {
+            var y2 = parseInt(Math.random() * arr3.length);
+            x2 = arr3[y2];
+        }
+        else {
             var y2 = parseInt(Math.random() * len),
             x2 = arr[y2];
 
@@ -45,10 +51,15 @@
                 this.h = arr[parseInt(Math.random() * len)];
                 this.y = 0;
                 //第二根pipe
-                if(this.h == 200 || this.h == 220 || this.h == 180) {
-
-                    this.h2 = arr2[parseInt(Math.random() * len2)];
-                } else {
+                if(this.h == 200 || this.h == 220 || this.h == 180 || this.h == 160) {
+                    console.log(2)
+                    this.h2 = arr[parseInt(Math.random() * (len - 4))];
+                } else if(this.h == 100 || this.h == 120) {
+                    
+                    this.h2 = arr3[parseInt(Math.random() * arr3.length)];
+                } 
+                
+                else {
                     this.h2 = arr[parseInt(Math.random() * len)];
 
                 }
